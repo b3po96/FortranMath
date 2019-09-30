@@ -10,8 +10,11 @@ namespace FortranMath
     class Driver
     {
 
-        [DllImport("Strassen.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("FortranFunc.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
             static extern void StrassenAlgorithm();
+
+        [DllImport("FortranFunc.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+            static extern void EratosAlgorithm();
 
         static void Main(string[] args)
         {
@@ -22,6 +25,10 @@ namespace FortranMath
                 if (key == "strassen")
                 {
                     StrassenAlgorithm();
+                }
+                else if (key == "eratosthenes")
+                {
+                    EratosAlgorithm();
                 }
                 else if (key == "exit")
                 {
